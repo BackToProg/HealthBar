@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 762674368}
   - component: {fileID: 762674367}
   m_Layer: 0
-  m_Name: HealthSystem
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 773950025}
-  _healthSystem: {fileID: 762674367}
+  health: {fileID: 762674367}
 --- !u!1 &875721943
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,7 +781,6 @@ GameObject:
   - component: {fileID: 1005827253}
   - component: {fileID: 1005827252}
   - component: {fileID: 1005827251}
-  - component: {fileID: 1005827250}
   m_Layer: 0
   m_Name: Heal
   m_TagString: Untagged
@@ -809,18 +808,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 70}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1005827250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005827248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c8ec93482f343acbac59b78d7a449e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1005827251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,7 +853,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 762674367}
-        m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
         m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
@@ -1161,8 +1148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 1182558351}
-  _smoothSpeed: 20
-  _healthSystem: {fileID: 762674367}
+  _smoothSpeed: 0.5
+  health: {fileID: 762674367}
 --- !u!1 &1208442988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1585787708}
-  _healthSystem: {fileID: 762674367}
+  health: {fileID: 762674367}
 --- !u!1 &1621900951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1542,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 762674367}
-        m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
         m_MethodName: TakeDamage
         m_Mode: 1
         m_Arguments:
