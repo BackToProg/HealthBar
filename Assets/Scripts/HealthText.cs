@@ -4,7 +4,7 @@ using UnityEngine;
 public class HealthText : MonoBehaviour
 {
    [SerializeField] private TextMeshProUGUI _text;
-   [SerializeField] private Health health;
+   [SerializeField] private Health _health;
 
    private void Start()
    {
@@ -18,6 +18,6 @@ public class HealthText : MonoBehaviour
 
    private void UpdateHealthText()
    {
-      _text.text = $"{health.CurrentHealth} / {health.MaxHealth}";
+      _text.text = $"{_health.CurrentHealth} / {_health.MaxHealth}";
    }
 }

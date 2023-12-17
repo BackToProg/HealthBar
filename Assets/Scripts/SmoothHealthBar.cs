@@ -6,13 +6,11 @@ public class SmoothHealthBar : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
     [SerializeField] private float _smoothSpeed = 10f;
-    [SerializeField] private Health health;
-    
-    private bool _isCoroutineStopped;
+    [SerializeField] private Health _health;
 
     private void Awake()
     {
-        _slider.value = health.MaxHealth;
+        _slider.value = _health.MaxHealth;
     }
 
     private void Update()
@@ -22,9 +20,9 @@ public class SmoothHealthBar : MonoBehaviour
 
     private IEnumerator UpdateSmoothBarValue()
     {
-        while (_slider.value != health.CurrentHealth)
+        while (_slider.value != _health.CurrentHealth)
         {
-            _slider.value = Mathf.MoveTowards(_slider.value, health.CurrentHealth,
+            _slider.value = Mathf.MoveTowards(_slider.value, _health.CurrentHealth,
                 Time.deltaTime * _smoothSpeed);
 
             yield return null;

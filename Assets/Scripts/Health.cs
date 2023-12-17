@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
         _currentHealth = _maxHealth;
     }
 
-    public void TakeDamage()
+    private void TakeDamage()
     {
         _currentHealth -= _damageValue;
 
@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Heal()
+    private void Heal()
     {
         _currentHealth += _healValue;
 

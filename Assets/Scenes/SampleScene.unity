@@ -666,7 +666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 773950025}
-  health: {fileID: 762674367}
+  _health: {fileID: 762674367}
 --- !u!1 &875721943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 1182558351}
   _smoothSpeed: 0.5
-  health: {fileID: 762674367}
+  _health: {fileID: 762674367}
 --- !u!1 &1208442988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1585787708}
-  health: {fileID: 762674367}
+  _health: {fileID: 762674367}
 --- !u!1 &1621900951
 GameObject:
   m_ObjectHideFlags: 0
