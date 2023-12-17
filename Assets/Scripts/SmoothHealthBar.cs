@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,44 +6,29 @@ public class SmoothHealthBar : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
     [SerializeField] private float _smoothSpeed = 10f;
-
-    private int _currentHealth;
-    private Coroutine _coroutine;
+    [SerializeField] private Health health;
+    
     private bool _isCoroutineStopped;
 
-    private void Start()
+    private void Awake()
     {
-        HealthSystem.Instance.OnHealthChange += OnHealthChange;
+        _slider.value = health.MaxHealth;
     }
 
     private void Update()
     {
-        if (_isCoroutineStopped && IsHealthInRange())
-        {
-            StopCoroutine(_coroutine);
-        }
-    }
-
-    private void OnHealthChange(object sender, EventArgs e)
-    {
-        _currentHealth = HealthSystem.Instance.CurrentHealth;
-        _coroutine = StartCoroutine(UpdateSmoothBarValue());
+        StartCoroutine(UpdateSmoothBarValue());
     }
 
     private IEnumerator UpdateSmoothBarValue()
     {
-        _isCoroutineStopped = false;
-        
-        while (_slider.value != _currentHealth)
+        while (_slider.value != health.CurrentHealth)
         {
-            _slider.value = Mathf.MoveTowards(_slider.value, _currentHealth,
+            _slider.value = Mathf.MoveTowards(_slider.value, health.CurrentHealth,
                 Time.deltaTime * _smoothSpeed);
 
             yield return null;
         }
-
-        _isCoroutineStopped = true;
     }
-
-    private bool IsHealthInRange() => _currentHealth > 0 && _currentHealth <  HealthSystem.Instance.MaxHealth;
+    
 }

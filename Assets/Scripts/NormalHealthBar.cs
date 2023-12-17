@@ -1,19 +1,20 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class NormalHealthBar : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
-
-    private void Start()
+    [SerializeField] private Health health;
+        
+    private void Awake()
     {
-        HealthSystem.Instance.OnHealthChange += OnHealthChange;
+        _slider.value = health.MaxHealth;
     }
 
-    private void OnHealthChange(object sender, EventArgs e)
+    private void Update()
     {
-        UpdateBarValue(HealthSystem.Instance.CurrentHealth);
+        UpdateBarValue(health.CurrentHealth);
     }
 
     private void UpdateBarValue(int value)
